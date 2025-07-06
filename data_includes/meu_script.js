@@ -29,37 +29,11 @@ Header(
 );
 
 newTrial("Participante",
-    newText("<p style='margin-bottom: 20px;'>Bem-vindos! Enviaremos aqui seu nome e escolaridade antes de começar.</p>").print(),
-    newText("<p style='margin-bottom: 10px;'>Por favor, escreva seu <strong>NOME COMPLETO</strong> abaixo:</p>").print(),
+    newText("<p style='margin-bottom: 20px;'>Bem-vindo/as! Solicitaremos aqui algumas informações gerais antes de começar.</p>").print(),
+    newText("<p style='margin-bottom: 10px;'>Por favor, escreva seu <strong>PRIMEIRO NOME</strong> abaixo:</p>").print(),
     newTextInput("Nome")
         .css("font-size", "1.1em")
         .center()
-        .print()
-        .log()
-    ,
-    // --- ALTERADO: Campo de Idade agora é um Dropdown com Faixas Etárias (última opção modificada) ---
-    newText("<p style='margin-top: 20px; margin-bottom: 10px;'>Por favor, selecione sua <strong>IDADE</strong>:</p>").print(),
-    newDropDown("Idade", "Selecione sua faixa etária") // Texto inicial do dropdown
-        .add("18 a 24 anos", "25 a 35 anos", "36 a 40 anos", "41 a 50 anos", "50 anos ou mais") // Última opção alterada aqui
-        .css("font-size", "1.1em")
-        .css("margin-bottom", "20px")
-        .print()
-        .log()
-    ,
-    // Campo para Região (mantido como dropdown)
-    newText("<p style='margin-top: 20px; margin-bottom: 10px;'>Agora selecione a <strong>REGIÃO DO BRASIL</strong> onde você mora:</p>").print(),
-    newDropDown("Regiao", "Selecione sua região")
-        .add("Norte", "Nordeste", "Centro-Oeste", "Sudeste", "Sul")
-        .css("font-size", "1.1em")
-        .css("margin-bottom", "20px")
-        .print()
-        .log()
-    ,
-    newText("<p style='margin-top: 20px; margin-bottom: 10px;'>Agora selecione sua <strong>ESCOLARIDADE</strong>:</p>").print(), // "ESCOLARIDADE" em negrito
-    newDropDown("Escolaridade", "Selecione sua escolaridade")
-        .add("Médio completo", "Superior em curso", "Superior completo", "Pós-graduação")
-        .css("font-size", "1.1em")
-        .css("margin-bottom", "20px")
         .print()
         .log()
     ,
@@ -71,8 +45,8 @@ newTrial("Participante",
 
 newTrial("Instrucoes",
     newText("<p style='margin-bottom: 20px; text-align:center;'>INSTRUÇÕES</p>").print(),
-    newText("<p style='margin-bottom: 20px; text-align:justify;'>Você irá realizar uma tarefa de escuta de sentenças e leitura de palavras na tela do computador. As sentenças foram produzidas por um falante de português brasileiro e as palavras que você irá ler podem ou não pertencer ao português. Sua tarefa consiste em ouvir atentamente as frases e responder à pergunta 'É uma palvra do português?', após cada palavra aparecer na tela do computador clicando em <strong>SIM</strong> ou <strong>NÃO</strong>. Ao final do teste, você completará um pequeno questionário para verificarmos o quanto você consegue lembrar das frases escutadas, por isso é importante que você preste bastante atenção nas sentenças que irá escutar.</p>").print(),
-    newButton("Começar Experimento")
+    newText("<p style='margin-bottom: 20px; text-align:justify;'>Você irá participar de uma tarefa de escuta de sentenças e leitura de palavras. Primeiro, você ouvirá uma sentença completa. Depois, uma palavra irá aparecer na tela. As palavras que você irá ler podem ou não pertencer ao português. Sua tarefa consiste em ouvir atentamente as frases, ler as palavras que irão aparecer na tela e responder - o mais rápido possível - à pergunta 'É uma palavra do português?', clicando em <strong>SIM</strong> ou <strong>NÃO</strong>. Ao final do teste, você responderá um pequeno questionário para verificarmos o quanto consegue lembrar das frases escutadas, por isso é importante que preste bastante atenção nas sentenças que irá ouvir.</p>").print(),
+    newButton("Começar Treinamento")
         .center()
         .print()
         .log()
@@ -169,7 +143,7 @@ newTrial("Treinamento",
 );
 
 newTrial("InicioExperimento",
-    newText("<p style='font-size: 1.5em; margin-bottom: 30px; text-align:center;'>Agora, vamos começar o experimento.</p>").print(),
+    newText("<p style='font-size: 1.5em; margin-bottom: 30px; text-align:center;'>Tudo certo? Você tem alguma dúvida? Quando estiver preparado/a iniciaremos a tarefa.</p>").print(),
     newButton("Iniciar Experimento")
         .center()
         .print()
@@ -219,7 +193,7 @@ Template("tabela_script_auditivo.csv", row =>
 
 newTrial("Questionario",
     newText("<p style='margin-bottom: 20px; text-align:center;'>Questionário Final</p>").print(),
-    newText("<p style='margin-bottom: 10px;'>Por favor, marque as palavras que você se lembra de ter visto no experimento:</p>").print(),
+    newText("<p style='margin-bottom: 10px;'>Por favor, marque todas as palavras que você se lembra de ter ouvido durante a atividade:</p>").print(),
 
     // Usando newHtml para criar as checkboxes
     newHtml("lembranca_palavras", `
@@ -249,13 +223,6 @@ newTrial("Questionario",
     // Ou, uma alternativa mais "PennController-like" seria um newScale para cada item
     // se você quiser o log individual mais limpo, mas newScale é geralmente para radios ou sliders.
 
-    newText("<p style='margin-top: 20px;'>Como você avalia sua experiência?</p>").print(),
-    newDropDown("Experiencia", "Selecione uma opção")
-        .add("Muito boa", "Boa", "Razoável", "Ruim", "Muito ruim")
-        .css("font-size", "1.1em")
-        .center()
-        .print()
-        .log(),
     newButton("Enviar respostas")
         .center()
         .print()
@@ -263,7 +230,7 @@ newTrial("Questionario",
 );
 
 newTrial("Final",
-    newText("<p style='margin-bottom: 20px; text-align:center;'>Muito obrigado por participar!</p>").print(),
+    newText("<p style='margin-bottom: 20px; text-align:center;'>Agradecemos sua participação!</p>").print(),
     newText("<p style='margin-bottom: 20px; text-align:center;'>Suas respostas foram salvas com sucesso.</p>").print(),
     newButton("Encerrar")
         .center()
