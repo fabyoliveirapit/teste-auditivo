@@ -61,10 +61,10 @@ newTrial("Treinamento",
         .css({"width": "80px", "height": "80px", "margin-bottom": "20px"})
         .center()
         .print(),
-    newAudio("audio1", "MACACO1.mp3").play().wait(),
+    newAudio("audio1", "PEDREIRO1.mp3").play().wait(),
     getImage("altofalante1").remove(),
     newTimer("delayTimer1", 300).start().wait(),
-    newText("BANANA").css("font-size", "2em").center().print(),
+    newText("CASCALHO").css("font-size", "2em").center().print(),
     // Removido: newText("pergunta1", "É uma palavra do português?").print(),
 
     newKey("resposta_t1", "VN")
@@ -72,7 +72,7 @@ newTrial("Treinamento",
         .wait()
     ,
     getAudio("audio1").remove(),
-    getText("BANANA").remove(),
+    getText("CASCALHO").remove(),
     // Removido: getText("pergunta1").remove(),
 
     // --- Treinamento Trial 2 ---
@@ -80,10 +80,10 @@ newTrial("Treinamento",
         .css({"width": "80px", "height": "80px", "margin-bottom": "20px"})
         .center()
         .print(),
-    newAudio("audio2", "PIRANHA1.mp3").play().wait(),
+    newAudio("audio2", "BAGAGEM1.mp3").play().wait(),
     getImage("altofalante2").remove(),
     newTimer("delayTimer2", 300).start().wait(),
-    newText("CABELO").css("font-size", "2em").center().print(),
+    newText("COBRADOR").css("font-size", "2em").center().print(),
     // Removido: newText("pergunta2", "É uma palavra do português?").print(),
 
     newKey("resposta_t2", "VN")
@@ -91,7 +91,7 @@ newTrial("Treinamento",
         .wait()
     ,
     getAudio("audio2").remove(),
-    getText("CABELO").remove(),
+    getText("COBRADOR").remove(),
     // Removido: getText("pergunta2").remove(),
 
     // --- Treinamento Trial 3 ---
@@ -99,15 +99,37 @@ newTrial("Treinamento",
         .css({"width": "80px", "height": "80px", "margin-bottom": "20px"})
         .center()
         .print(),
-    newAudio("audio3", "PERUA1.mp3").play().wait(),
+    newAudio("audio3", "PIPOCA1.mp3").play().wait(),
     getImage("altofalante3").remove(),
     newTimer("delayTimer3", 300).start().wait(),
-    newText("CARRO").css("font-size", "2em").center().print(),
+    newText("FILME").css("font-size", "2em").center().print(),
     // Removido: newText("pergunta3", "É uma palavra do português?").print(),
 
     newKey("resposta_t3", "VN")
         .log()
         .wait()
+        ,
+    getAudio("audio3").remove(),
+    getText("FILME").remove(),
+    
+    // --- Treinamento Trial 4 ---
+    newImage("altofalante4", "altofalante_exp.png")
+        .css({"width": "80px", "height": "80px", "margin-bottom": "20px"})
+        .center()
+        .print(),
+    newAudio("audio4", "ATENDIMENTO1.mp3").play().wait(),
+    getImage("altofalante4").remove(),
+    newTimer("delayTimer4", 300).start().wait(),
+    newText("CIRURGIA").css("font-size", "2em").center().print(),
+    // Removido: newText("pergunta2", "É uma palavra do português?").print(),
+
+    newKey("resposta_t4", "VN")
+        .log()
+        .wait()
+    ,
+    getAudio("audio4").remove(),
+    getText("CIRURGIA").remove(),
+    
 );
 
 newTrial("InicioExperimento",
@@ -119,7 +141,7 @@ newTrial("InicioExperimento",
 );
 
 Template("tabela_script_auditivo.csv", row =>
-    newTrial("Experimento",
+     newTrial("Experimento",
         newImage("altofalante_exp_trial", "altofalante_exp.png")
             .css({"width": "80px", "height": "80px", "margin-bottom": "20px"})
             .center()
